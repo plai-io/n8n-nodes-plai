@@ -1,0 +1,22 @@
+{
+	"node": "n8n-nodes-plai.plai",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing & Content"],
+	"subcategories": {
+		"Marketing & Content": ["Advertising"]
+	},
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/plai-io/n8n-nodes-plai#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/plai-io/n8n-nodes-plai#operations"
+			}
+		]
+	},
+	"alias": ["Plai", "Advertising", "Marketing Automation", "Campaign Management"]
+}

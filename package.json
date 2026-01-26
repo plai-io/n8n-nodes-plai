@@ -1,19 +1,29 @@
 {
-	"name": "n8n-nodes-<...>",
-	"version": "0.1.0",
-	"description": "",
+	"name": "n8n-nodes-plai",
+	"version": "1.0.0",
+	"description": "n8n community node for Plai - Receive leads from Meta and LinkedIn ads in real-time",
 	"license": "MIT",
-	"homepage": "",
+	"homepage": "https://github.com/plai-io/n8n-nodes-plai",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"n8n",
+		"plai",
+		"facebook leads",
+		"linkedin leads",
+		"meta ads",
+		"lead generation",
+		"advertising",
+		"marketing automation",
+		"webhook",
+		"crm"
 	],
 	"author": {
-		"name": "",
-		"email": ""
+		"name": "Plai Team",
+		"email": "support@plai.io"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/<...>/n8n-nodes-<...>.git"
+		"url": "https://github.com/plai-io/n8n-nodes-plai.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -31,12 +41,11 @@
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/GithubIssuesApi.credentials.js",
-			"dist/credentials/GithubIssuesOAuth2Api.credentials.js"
+			"dist/credentials/PlaiApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/GithubIssues/GithubIssues.node.js",
-			"dist/nodes/Example/Example.node.js"
+			"dist/nodes/Plai/Plai.node.js",
+			"dist/nodes/Plai/PlaiTrigger.node.js"
 		]
 	},
 	"devDependencies": {

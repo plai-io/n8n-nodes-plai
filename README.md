@@ -1,247 +1,142 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-plai
 
-# n8n-nodes-starter
+This is an n8n community node. It lets you use Plai in your n8n workflows.
 
-This starter repository helps you build custom integrations for [n8n](https://n8n.io). It includes example nodes, credentials, the node linter, and all the tooling you need to get started.
+Plai makes it easy to plan marketing campaigns, find insights in your analytics, and act on your insights with targeted ads across multiple platforms. This node allows you to receive leads from Meta (Facebook/Instagram) and LinkedIn ads in real-time.
 
-## Quick Start
+**New to Plai?** Sign up for a [7-day free trial](https://whitelabel.plai.io) to get started.
 
-> [!TIP]
-> **New to building n8n nodes?** The fastest way to get started is with `npm create @n8n/node`. This command scaffolds a complete node package for you using the [@n8n/node-cli](https://www.npmjs.com/package/@n8n/node-cli).
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-**To create a new node package from scratch:**
+## Features
 
-```bash
-npm create @n8n/node
-```
+- ✅ **Real-time lead capture**: Automatically receive leads the moment they're submitted
+- ✅ **Meta & LinkedIn support**: Connect both major advertising platforms  
+- ✅ **Zero-code setup**: Configure in minutes without writing code
+- ✅ **Reliable webhooks**: Never miss a lead with n8n's webhook infrastructure
 
-**Already using this starter? Start developing with:**
+[Installation](#installation)  
+[Operations](#operations)  
+[Credentials](#credentials)  
+[Compatibility](#compatibility)  
+[Usage](#usage)  
+[Resources](#resources)  
 
-```bash
-npm run dev
-```
+## Installation
 
-This starts n8n with your nodes loaded and hot reload enabled.
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
-## What's Included
+### Install via GUI (n8n Cloud and Self-Hosted)
 
-This starter repository includes two example nodes to learn from:
+From n8n version 0.187.0 onwards, you can install community nodes from the n8n editor:
 
-- **[Example Node](nodes/Example/)** - A simple starter node that shows the basic structure with a custom `execute` method
-- **[GitHub Issues Node](nodes/GithubIssues/)** - A complete, production-ready example built using the **declarative style**:
-  - **Low-code approach** - Define operations declaratively without writing request logic
-  - Multiple resources (Issues, Comments)
-  - Multiple operations (Get, Get All, Create)
-  - Two authentication methods (OAuth2 and Personal Access Token)
-  - List search functionality for dynamic dropdowns
-  - Proper error handling and typing
-  - Ideal for HTTP API-based integrations
+1. Go to **Settings > Community Nodes**.
+2. Select **Install**.
+3. Enter `n8n-nodes-plai` in **Enter npm package name**.
+4. Agree to the [risks](https://docs.n8n.io/integrations/community-nodes/risks/) of using community nodes: select **I understand the risks of installing unverified code from a public source**.
+5. Select **Install**.
 
-> [!TIP]
-> The declarative/low-code style (used in GitHub Issues) is the recommended approach for building nodes that interact with HTTP APIs. It significantly reduces boilerplate code and handles requests automatically.
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
 
-Browse these examples to understand both approaches, then modify them or create your own.
+### Manual Installation
 
-## Finding Inspiration
+To install the node locally, you must have npm (Node Package Manager) installed. Follow n8n's [npm installation guide](https://docs.n8n.io/hosting/installation/npm/).
 
-Looking for more examples? Check out these resources:
+1. In your n8n root directory, enter:
+   ```bash
+   npm install n8n-nodes-plai
+   ```
+2. Restart n8n.
 
-- **[npm Community Nodes](https://www.npmjs.com/search?q=keywords:n8n-community-node-package)** - Browse thousands of community-built nodes on npm using the `n8n-community-node-package` tag
-- **[n8n Built-in Nodes](https://github.com/n8n-io/n8n/tree/master/packages/nodes-base/nodes)** - Study the source code of n8n's official nodes for production-ready patterns and best practices
-- **[n8n Credentials](https://github.com/n8n-io/n8n/tree/master/packages/nodes-base/credentials)** - See how authentication is implemented for various services
+For Docker-based installations, add the package to the mounted volume and restart the container. Refer to n8n's [manual installation guide](https://docs.n8n.io/integrations/community-nodes/installation/manual-installation/) for details.
 
-These are excellent resources to understand how to structure your nodes, handle different API patterns, and implement advanced features.
+## Operations
 
-## Prerequisites
+### Plai
 
-Before you begin, install the following on your development machine:
+The Plai action node is currently in development. Campaign management operations are coming soon.
 
-### Required
+**Current Status**: Use the **Plai Trigger** node to receive leads in real-time.
 
-- **[Node.js](https://nodejs.org/)** (v22 or higher) and npm
-  - Linux/Mac/WSL: Install via [nvm](https://github.com/nvm-sh/nvm)
-  - Windows: Follow [Microsoft's NodeJS guide](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows)
-- **[git](https://git-scm.com/downloads)**
+### Plai Trigger
 
-### Recommended
+**Webhook trigger for receiving leads in real-time**
 
-- Follow n8n's [development environment setup guide](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/)
+- **Meta (Facebook/Instagram)**: Receive leads from Facebook and Instagram ad campaigns
+- **LinkedIn**: Receive leads from LinkedIn ad campaigns
 
-> [!NOTE]
-> The `@n8n/node-cli` is included as a dev dependency and will be installed automatically when you run `npm install`. The CLI includes n8n for local development, so you don't need to install n8n globally.
+## Credentials
 
-## Getting Started with this Starter
+This node uses API authentication to connect to Plai.
 
-Follow these steps to create your own n8n community node package:
+### Prerequisites
 
-### 1. Create Your Repository
+To use this node, you need a Plai account. If you don't have an account:
 
-[Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template, then clone it:
+1. Visit [whitelabel.plai.io](https://whitelabel.plai.io) to sign up
+2. Start your **7-day free trial** (no credit card required)
+3. Once registered, you can generate API credentials from your dashboard
 
-```bash
-git clone https://github.com/<your-organization>/<your-repo-name>.git
-cd <your-repo-name>
-```
+### Required Credentials
 
-### 2. Install Dependencies
+- **Client ID**: Your Plai User ID
+- **Client Secret**: Your Plai API Key
 
-```bash
-npm install
-```
+### Getting Your API Credentials
 
-This installs all required dependencies including the `@n8n/node-cli`.
+1. Log in to your Plai account at [whitelabel.plai.io](https://whitelabel.plai.io)
+2. Navigate to **Settings > API Keys**
+3. Copy your **User ID** and **API Key**
+4. In n8n credentials configuration:
+   - Paste your User ID into the **Client ID** field
+   - Paste your API Key into the **Client Secret** field
 
-### 3. Explore the Examples
+### Platform Connections
 
-Browse the example nodes in [nodes/](nodes/) and [credentials/](credentials/) to understand the structure:
+Before receiving leads via this node, ensure you have connected your advertising accounts in Plai:
 
-- Start with [nodes/Example/](nodes/Example/) for a basic node
-- Study [nodes/GithubIssues/](nodes/GithubIssues/) for a real-world implementation
+- **For Meta (Facebook/Instagram) leads**: Connect your Meta Business account in your Plai dashboard
+- **For LinkedIn leads**: Connect your LinkedIn Ads account in your Plai dashboard
 
-### 4. Build Your Node
+Refer to the Plai platform at [whitelabel.plai.io](https://whitelabel.plai.io) for instructions on connecting advertising accounts.
 
-Edit the example nodes to fit your use case, or create new node files by copying the structure from [nodes/Example/](nodes/Example/).
+## Compatibility
 
-> [!TIP]
-> If you want to scaffold a completely new node package, use `npm create @n8n/node` to start fresh with the CLI's interactive generator.
+- **Minimum n8n version**: 1.0.0
+- **Tested with**: n8n version 1.70.0+
 
-### 5. Configure Your Package
+## Usage
 
-Update `package.json` with your details:
+This node currently provides the **Plai Trigger** for receiving leads in real-time. The Plai action node for campaign management is coming soon.
 
-- `name` - Your package name (must start with `n8n-nodes-`)
-- `author` - Your name and email
-- `repository` - Your repository URL
-- `description` - What your node does
+### Plai Trigger (Available Now)
 
-Make sure your node is registered in the `n8n.nodes` array.
+Use this node to trigger workflows when new leads are received from Meta or LinkedIn ads.
 
-### 6. Develop and Test Locally
+**Example: Receive Meta Leads**
 
-Start n8n with your node loaded:
+1. Add the Plai Trigger node to your workflow
+2. Select **Meta (Facebook/Instagram)** as the platform
+3. Select the Facebook Page to monitor
+4. Activate the workflow
+5. New leads will automatically trigger the workflow
 
-```bash
-npm run dev
-```
+**Example: Receive LinkedIn Leads**
 
-This command runs `n8n-node dev` which:
-
-- Builds your node with watch mode
-- Starts n8n with your node available
-- Automatically rebuilds when you make changes
-- Opens n8n in your browser (usually http://localhost:5678)
-
-You can now test your node in n8n workflows!
-
-> [!NOTE]
-> Learn more about CLI commands in the [@n8n/node-cli documentation](https://www.npmjs.com/package/@n8n/node-cli).
-
-### 7. Lint Your Code
-
-Check for errors:
-
-```bash
-npm run lint
-```
-
-Auto-fix issues when possible:
-
-```bash
-npm run lint:fix
-```
-
-### 8. Build for Production
-
-When ready to publish:
-
-```bash
-npm run build
-```
-
-This compiles your TypeScript code to the `dist/` folder.
-
-### 9. Prepare for Publishing
-
-Before publishing:
-
-1. **Update documentation**: Replace this README with your node's documentation. Use [README_TEMPLATE.md](README_TEMPLATE.md) as a starting point.
-2. **Update the LICENSE**: Add your details to the [LICENSE](LICENSE.md) file.
-3. **Test thoroughly**: Ensure your node works in different scenarios.
-
-### 10. Publish to npm
-
-Publish your package to make it available to the n8n community:
-
-```bash
-npm publish
-```
-
-Learn more about [publishing to npm](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
-
-### 11. Submit for Verification (Optional)
-
-Get your node verified for n8n Cloud:
-
-1. Ensure your node meets the [requirements](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/):
-   - Uses MIT license ✅ (included in this starter)
-   - No external package dependencies
-   - Follows n8n's design guidelines
-   - Passes quality and security review
-
-2. Submit through the [n8n Creator Portal](https://creators.n8n.io/nodes)
-
-**Benefits of verification:**
-
-- Available directly in n8n Cloud
-- Discoverable in the n8n nodes panel
-- Verified badge for quality assurance
-- Increased visibility in the n8n community
-
-## Available Scripts
-
-This starter includes several npm scripts to streamline development:
-
-| Script                | Description                                                      |
-| --------------------- | ---------------------------------------------------------------- |
-| `npm run dev`         | Start n8n with your node and watch for changes (runs `n8n-node dev`) |
-| `npm run build`       | Compile TypeScript to JavaScript for production (runs `n8n-node build`) |
-| `npm run build:watch` | Build in watch mode (auto-rebuild on changes)                    |
-| `npm run lint`        | Check your code for errors and style issues (runs `n8n-node lint`) |
-| `npm run lint:fix`    | Automatically fix linting issues when possible (runs `n8n-node lint --fix`) |
-| `npm run release`     | Create a new release (runs `n8n-node release`)                   |
-
-> [!TIP]
-> These scripts use the [@n8n/node-cli](https://www.npmjs.com/package/@n8n/node-cli) under the hood. You can also run CLI commands directly, e.g., `npx n8n-node dev`.
-
-## Troubleshooting
-
-### My node doesn't appear in n8n
-
-1. Make sure you ran `npm install` to install dependencies
-2. Check that your node is listed in `package.json` under `n8n.nodes`
-3. Restart the dev server with `npm run dev`
-4. Check the console for any error messages
-
-### Linting errors
-
-Run `npm run lint:fix` to automatically fix most common issues. For remaining errors, check the [n8n node development guidelines](https://docs.n8n.io/integrations/creating-nodes/).
-
-### TypeScript errors
-
-Make sure you're using Node.js v22 or higher and have run `npm install` to get all type definitions.
+1. Add the Plai Trigger node to your workflow
+2. Select **LinkedIn** as the platform
+3. Activate the workflow
+4. New leads will automatically trigger the workflow
 
 ## Resources
 
-- **[n8n Node Documentation](https://docs.n8n.io/integrations/creating-nodes/)** - Complete guide to building nodes
-- **[n8n Community Forum](https://community.n8n.io/)** - Get help and share your nodes
-- **[@n8n/node-cli Documentation](https://www.npmjs.com/package/@n8n/node-cli)** - CLI tool reference
-- **[n8n Creator Portal](https://creators.n8n.io/nodes)** - Submit your node for verification
-- **[Submit Community Nodes Guide](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/)** - Verification requirements and process
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+* [Plai platform](https://whitelabel.plai.io)
 
-## Contributing
+## Version History
 
-Have suggestions for improving this starter? [Open an issue](https://github.com/n8n-io/n8n-nodes-starter/issues) or submit a pull request!
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ## License
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+[MIT](LICENSE.md)
