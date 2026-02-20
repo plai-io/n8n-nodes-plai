@@ -49,7 +49,7 @@ export class Plai implements INodeType {
 					{
 						name: 'Create (Coming Soon)',
 						value: 'create',
-						action: 'Create a campaign coming soon',
+						action: 'Create a campaign (Coming Soon)',
 						description: 'Create a new campaign (Coming Soon)',
 					},
 				],

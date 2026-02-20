@@ -50,7 +50,7 @@ export class PlaiTrigger implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'On New Lead',
+						name: 'New Lead',
 						value: 'newLead',
 						description: 'Triggers when a new lead is submitted',
 					},
@@ -71,6 +71,10 @@ export class PlaiTrigger implements INodeType {
 					{
 						name: 'LinkedIn',
 						value: 'linkedin',
+					},
+					{
+						name: 'TikTok',
+						value: 'tiktok',
 					},
 				],
 				default: 'meta',
@@ -178,8 +182,14 @@ export class PlaiTrigger implements INodeType {
 					});
 				} catch (error: unknown) {
 					// Parse error response if available
-					const err = error as { message?: string };
+					const err = error as { message?: string; response?: { data?: { results?: { error?: string } } } };
 					const message = err.message || '';
+					
+					// First check if the error contains a response data object with our backend error format
+					// This handles the case where axios throws an HTTP error but the body contains our json
+					if (err.response?.data?.results?.error) {
+						throw new NodeOperationError(this.getNode(), err.response.data.results.error);
+					}
 
 					// Find JSON in message (handles nested braces)
 					const jsonStart = message.indexOf('{');
@@ -202,14 +212,19 @@ export class PlaiTrigger implements INodeType {
 					throw new NodeOperationError(this.getNode(), message || 'Failed to subscribe to leads');
 				}
 
-				// Check for success
+				// Check for success false but HTTP 200 (how the backend currently returns errors)
+				if (response.success === false && response.results?.error) {
+					throw new NodeOperationError(this.getNode(), response.results.error);
+				}
+
+				// Check for success true and valid subscription
 				if (response.success && response.results?.success && response.results?.subscriptionId) {
 					const webhookData = this.getWorkflowStaticData('node');
 					webhookData.subscriptionId = response.results.subscriptionId;
 					return true;
 				}
 
-				// Throw error with message from backend
+				// Throw error with message from backend如果 all else fails
 				const errorMessage = response.results?.error || 'Failed to subscribe to leads';
 				throw new NodeOperationError(this.getNode(), errorMessage);
 			},
