@@ -52,5 +52,15 @@ export class PlaiApi implements ICredentialType {
 				userId: '={{$credentials.clientId}}',
 			},
 		},
+		rules: [
+			{
+				type: 'responseSuccessBody',
+				properties: {
+					key: 'results.success',
+					value: false,
+					message: 'Invalid Client ID - Please check your User ID',
+				},
+			},
+		],
 	};
 }
