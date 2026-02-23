@@ -2,7 +2,7 @@
 
 This is an n8n community node. It lets you use Plai in your n8n workflows.
 
-Plai makes it easy to plan marketing campaigns, find insights in your analytics, and act on your insights with targeted ads across multiple platforms. This node allows you to receive leads from Meta (Facebook/Instagram) and LinkedIn ads in real-time.
+Plai makes it easy to plan marketing campaigns, find insights in your analytics, and act on your insights with targeted ads across multiple platforms. This node allows you to receive leads from Meta (Facebook/Instagram), LinkedIn, and TikTok ads in real-time.
 
 **New to Plai?** Sign up for a [7-day free trial](https://whitelabel.plai.io) to get started.
 
@@ -11,7 +11,7 @@ Plai makes it easy to plan marketing campaigns, find insights in your analytics,
 ## Features
 
 - ✅ **Real-time lead capture**: Automatically receive leads the moment they're submitted
-- ✅ **Meta & LinkedIn support**: Connect both major advertising platforms  
+- ✅ **Meta, LinkedIn & TikTok support**: Connect all major advertising platforms  
 - ✅ **Zero-code setup**: Configure in minutes without writing code
 - ✅ **Reliable webhooks**: Never miss a lead with n8n's webhook infrastructure
 
@@ -111,7 +111,7 @@ This node currently provides the **Plai Trigger** for receiving leads in real-ti
 
 ### Plai Trigger (Available Now)
 
-Use this node to trigger workflows when new leads are received from Meta or LinkedIn ads.
+Use this node to trigger workflows when new leads are received from Meta, LinkedIn, or TikTok ads.
 
 **Example: Receive Meta Leads**
 
@@ -125,6 +125,13 @@ Use this node to trigger workflows when new leads are received from Meta or Link
 
 1. Add the Plai Trigger node to your workflow
 2. Select **LinkedIn** as the platform
+3. Activate the workflow
+4. New leads will automatically trigger the workflow
+
+**Example: Receive TikTok Leads**
+
+1. Add the Plai Trigger node to your workflow
+2. Select **TikTok** as the platform
 3. Activate the workflow
 4. New leads will automatically trigger the workflow
 
