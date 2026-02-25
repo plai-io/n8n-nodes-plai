@@ -38,7 +38,7 @@ export class PlaiTrigger implements INodeType {
 		],
 		properties: [
 			{
-				displayName: 'This trigger automatically registers a webhook with Plai when activated. Ensure your advertising accounts are connected in <a href="https://whitelabel.plai.io" target="_blank">your Plai dashboard</a>. <a href="https://github.com/plai-io/n8n-nodes-plai#credentials" target="_blank">More info</a>.',
+				displayName: 'This trigger automatically registers a webhook with Plai when activated. Ensure your advertising accounts are connected in <a href="https://grow.plai.io" target="_blank">your Plai dashboard</a>. <a href="https://github.com/plai-io/n8n-nodes-plai#credentials" target="_blank">More info</a>.',
 				name: 'notice',
 				type: 'notice',
 				default: '',

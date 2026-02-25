@@ -4,7 +4,7 @@ This is an n8n community node. It lets you use Plai in your n8n workflows.
 
 Plai makes it easy to plan marketing campaigns, find insights in your analytics, and act on your insights with targeted ads across multiple platforms. This node allows you to receive leads from Meta (Facebook/Instagram), LinkedIn, and TikTok ads in realtime.
 
-**New to Plai?** Sign up for a [7-day free trial](https://whitelabel.plai.io) to get started.
+**New to Plai?** Sign up for a [7-day free trial](https://grow.plai.io) to get started.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -74,7 +74,7 @@ This node uses API authentication to connect to Plai.
 
 To use this node, you need a Plai account. If you don't have an account:
 
-1. Visit [whitelabel.plai.io](https://whitelabel.plai.io) to sign up
+1. Visit [grow.plai.io](https://grow.plai.io) to sign up
 2. Start your **7-day free trial** (no credit card required)
 3. Once registered, you can generate API credentials from your dashboard
 
@@ -85,7 +85,7 @@ To use this node, you need a Plai account. If you don't have an account:
 
 ### Getting Your API Credentials
 
-1. Log in to your Plai account at [whitelabel.plai.io](https://whitelabel.plai.io)
+1. Log in to your Plai account at [grow.plai.io](https://grow.plai.io)
 2. Navigate to **Settings > API Keys**
 3. Copy your **User ID** and **API Key**
 4. In n8n credentials configuration:
@@ -100,7 +100,7 @@ Before receiving leads via this node, ensure you have connected your advertising
 - **For LinkedIn leads**: Connect your LinkedIn Ads account in your Plai dashboard
 - **For TikTok leads**: Connect your TikTok Ads account in your Plai dashboard
 
-Refer to the Plai platform at [whitelabel.plai.io](https://whitelabel.plai.io) for instructions on connecting advertising accounts.
+Refer to the Plai platform at [grow.plai.io](https://grow.plai.io) for instructions on connecting advertising accounts.
 
 ## Compatibility
 
@@ -140,7 +140,7 @@ Use this node to trigger workflows when new leads are received from Meta, Linked
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-* [Plai platform](https://whitelabel.plai.io)
+* [Plai platform](https://grow.plai.io)
 
 ## Version History
 

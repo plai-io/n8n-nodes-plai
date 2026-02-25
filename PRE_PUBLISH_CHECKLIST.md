@@ -43,7 +43,7 @@
 - [ ] **Ensure you have npm account** and are logged in (`npm whoami`)
 
 ### Important (Should Do Before Verification)
-- [ ] **Build API key management UI** in whitelabel.plai.io
+- [ ] **Build API key management UI** in grow.plai.io
   - Settings > API Keys section
   - Display User ID (Client ID)
   - Display/Generate API Key (Client Secret)
@@ -124,7 +124,7 @@ npm install n8n-nodes-plai
 
 ### When to Submit
 - ✅ After npm publish is successful
-- ✅ After API key management UI is built in whitelabel.plai.io
+- ✅ After API key management UI is built in grow.plai.io
 
 ### Where to Submit
 https://creators.n8n.io/
@@ -138,7 +138,7 @@ npm URL: https://www.npmjs.com/package/n8n-nodes-plai
 GitHub: https://github.com/plai-io/n8n-nodes-plai
 
 Testing Instructions:
-1. Visit https://whitelabel.plai.io
+1. Visit https://grow.plai.io
 2. Sign up for 7-day free trial (no credit card required)
 3. Navigate to Settings > API Keys
 4. Copy your User ID and API Key
@@ -215,7 +215,7 @@ No external runtime dependencies
 
 ⚠️ Needs Attention:
 - GitHub repo (verify it's accessible)
-- whitelabel.plai.io API key UI (must build)
+- grow.plai.io API key UI (must build)
 - docs.plai.io (optional, can build later)
 
 ✅ Build Artifacts (auto-generated):
