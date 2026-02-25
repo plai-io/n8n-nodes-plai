@@ -20,7 +20,7 @@ export class PlaiTrigger implements INodeType {
 		group: ['trigger'],
 		version: 1,
 		subtitle: '={{$parameter["event"]}}',
-		description: 'Trigger workflow when a new lead is received from Meta or LinkedIn via Plai',
+		description: 'Trigger workflow when a new lead is received from Meta, LinkedIn, or TikTok via Plai',
 		defaults: {
 			name: 'Plai Trigger',
 		},

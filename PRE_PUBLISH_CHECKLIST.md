@@ -146,11 +146,11 @@ Testing Instructions:
    - Client ID: [Your User ID]
    - Client Secret: [Your API Key]
 6. Add Plai Trigger node to workflow
-7. Select platform (Meta or LinkedIn)
+7. Select platform (Meta, LinkedIn, or TikTok)
 8. Activate workflow
 
 The node currently provides:
-- Real-time lead webhook triggers for Meta and LinkedIn
+- Real-time lead webhook triggers for Meta, LinkedIn, and TikTok
 - Dynamic page selection for Meta leads
 - Plai action node operations coming soon
 

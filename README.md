@@ -64,6 +64,7 @@ The Plai action node is currently in development. Campaign management operations
 
 - **Meta (Facebook/Instagram)**: Receive leads from Facebook and Instagram ad campaigns
 - **LinkedIn**: Receive leads from LinkedIn ad campaigns
+- **TikTok**: Receive leads from TikTok ad campaigns
 
 ## Credentials
 
@@ -97,6 +98,7 @@ Before receiving leads via this node, ensure you have connected your advertising
 
 - **For Meta (Facebook/Instagram) leads**: Connect your Meta Business account in your Plai dashboard
 - **For LinkedIn leads**: Connect your LinkedIn Ads account in your Plai dashboard
+- **For TikTok leads**: Connect your TikTok Ads account in your Plai dashboard
 
 Refer to the Plai platform at [whitelabel.plai.io](https://whitelabel.plai.io) for instructions on connecting advertising accounts.
 

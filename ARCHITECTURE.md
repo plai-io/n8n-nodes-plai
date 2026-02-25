@@ -17,6 +17,7 @@ graph TB
     subgraph PlaiTriggers["Plai Trigger (plaiTrigger)"]
         MetaTrigger["Meta Leads<br/>(Facebook/Instagram)"]
         LinkedInTrigger["LinkedIn Leads"]
+        TikTokTrigger["TikTok Leads"]
     end
     
     subgraph PlaiBackend["Plai Backend APIs"]
@@ -36,6 +37,8 @@ graph TB
     MetaTrigger -->|POST| WebhooksUnsubscribe
     LinkedInTrigger -->|POST| WebhooksSubscribe
     LinkedInTrigger -->|POST| WebhooksUnsubscribe
+    TikTokTrigger -->|POST| WebhooksSubscribe
+    TikTokTrigger -->|POST| WebhooksUnsubscribe
     
     AccountVerify -.->|Used by| PlaiCredentials["PlaiApi Credentials"]
     
@@ -44,6 +47,7 @@ graph TB
     style GetLead fill:#10b981,color:#fff
     style MetaTrigger fill:#f59e0b,color:#fff
     style LinkedInTrigger fill:#f59e0b,color:#fff
+    style TikTokTrigger fill:#f59e0b,color:#fff
 ```
 
 ## Data Flow
@@ -56,7 +60,7 @@ sequenceDiagram
     participant N8N as n8n Workflow
     participant PlaiTrigger as Plai Trigger Node
     participant PlaiAPI as Plai Backend
-    participant Meta as Meta/LinkedIn
+    participant Meta as Meta/LinkedIn/TikTok
     
     User->>N8N: Activate workflow
     N8N->>PlaiTrigger: Create webhook
@@ -115,7 +119,8 @@ n8n-nodes-plai/
 │   ├── PlaiTrigger.node.ts         # Webhook trigger node
 │   │   ├── Platform: Meta
 │   │   │   └── Dynamic page selection
-│   │   └── Platform: LinkedIn
+│   │   ├── Platform: LinkedIn
+│   │   └── Platform: TikTok
 │   │
 │   ├── Plai.node.json              # Codex metadata
 │   ├── PlaiTrigger.node.json       # Codex metadata
@@ -134,7 +139,7 @@ n8n-nodes-plai/
 ```json
 {
   "leadId": "string",
-  "source": "meta_lead_ads | linkedin_lead_ads",
+  "source": "meta_lead_ads | linkedin_lead_ads | tiktok_lead_ads",
   "name": "string",
   "email": "string",
   "phone": "string",
@@ -144,7 +149,7 @@ n8n-nodes-plai/
     "...": "..."
   },
   "pageId": "string (Meta only)",
-  "adAccountId": "string (LinkedIn only)",
+  "adAccountId": "string (LinkedIn/TikTok only)",
   "campaignId": "string",
   "adsetId": "string",
   "adId": "string",
@@ -192,6 +197,7 @@ n8n-nodes-plai/
 
 ```
 [Plai Trigger: LinkedIn Leads]
+[Plai Trigger: TikTok Leads]
     ↓
 [Plai: Get Lead] (get full details)
     ↓
@@ -257,6 +263,7 @@ Both nodes implement comprehensive error handling:
 ### Plai Trigger Node
 - ✅ Meta leads webhook (complete)
 - ✅ LinkedIn leads webhook (complete)
+- ✅ TikTok leads webhook (complete)
 - [ ] Campaign status changes (if requested)
 - [ ] Budget alerts (if requested)
 

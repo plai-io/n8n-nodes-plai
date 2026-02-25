@@ -43,7 +43,7 @@ icon = 'file:plai.svg' as const;
 
 **Changed from (lead-specific):**
 ```json
-"alias": ["Facebook Leads", "LinkedIn Leads", "Meta Leads", "Instagram Leads", "Lead Generation"]
+"alias": ["Facebook Leads", "LinkedIn Leads", "TikTok Leads", "Meta Leads", "Instagram Leads", "Lead Generation"]
 ```
 
 **Changed to (generic):**
@@ -129,7 +129,7 @@ n8n-nodes-plai/
 **Type:** Webhook trigger
 **Group:** trigger
 **Events:** New Lead
-**Platforms:** Meta, LinkedIn
+**Platforms:** Meta, LinkedIn, TikTok
 
 **Features:**
 - ✅ Dynamic page loading for Meta

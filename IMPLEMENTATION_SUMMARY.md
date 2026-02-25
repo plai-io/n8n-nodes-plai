@@ -14,7 +14,7 @@ n8n-nodes-plai/
 │   └── Plai/
 │       ├── Plai.node.ts          # Main action node (Get Lead operation)
 │       ├── Plai.node.json        # Codex metadata for Plai node
-│       ├── PlaiTrigger.node.ts   # Webhook trigger node (Meta/LinkedIn leads)
+│       ├── PlaiTrigger.node.ts   # Webhook trigger node (Meta/LinkedIn/TikTok leads)
 │       ├── PlaiTrigger.node.json # Codex metadata for Plai Trigger
 │       ├── plai.svg              # SVG logo for nodes
 │       └── plai.png              # PNG logo (backup)
@@ -40,7 +40,7 @@ n8n-nodes-plai/
 - **Internal Name**: `plaiTrigger`
 - **Type**: Webhook trigger node
 - **Icon**: Same SVG logo
-- **Platforms**: Meta (Facebook/Instagram), LinkedIn
+- **Platforms**: Meta (Facebook/Instagram), LinkedIn, TikTok
 - **Features**:
   - Real-time webhook subscriptions
   - Dynamic page loading for Meta
@@ -137,7 +137,7 @@ The foundation is complete! Future enhancements can include:
 - Get Ad Performance
 
 **PlaiTrigger Node:**
-- Already complete for Meta and LinkedIn leads
+- Already complete for Meta, LinkedIn, and TikTok leads
 
 ### Testing Checklist
 
@@ -146,7 +146,8 @@ Before publishing to npm:
 - [ ] Test credential validation
 - [ ] Test Meta page loading
 - [ ] Test webhook subscription (Meta)
-- [ ] Test webhook subscription (LinkedIn)
+- [x] Test webhook subscription (LinkedIn)
+- [x] Test webhook subscription (TikTok)
 - [ ] Test lead webhook payload processing
 - [ ] Test workflow deactivation (webhook cleanup)
 - [ ] Test Get Lead operation
