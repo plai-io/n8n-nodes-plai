@@ -1,7 +1,7 @@
 {
 	"name": "n8n-nodes-plai",
 	"version": "1.0.3",
-	"description": "n8n community node for Plai - Receive leads from Meta and LinkedIn ads in real-time",
+	"description": "n8n community node for Plai - Receive leads from Meta and LinkedIn ads in realtime",
 	"license": "MIT",
 	"homepage": "https://github.com/plai-io/n8n-nodes-plai",
 	"keywords": [
