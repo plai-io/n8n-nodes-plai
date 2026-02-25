@@ -2,7 +2,7 @@
 
 This is an n8n community node. It lets you use Plai in your n8n workflows.
 
-Plai makes it easy to plan marketing campaigns, find insights in your analytics, and act on your insights with targeted ads across multiple platforms. This node allows you to receive leads from Meta (Facebook/Instagram), LinkedIn, and TikTok ads in real-time.
+Plai makes it easy to plan marketing campaigns, find insights in your analytics, and act on your insights with targeted ads across multiple platforms. This node allows you to receive leads from Meta (Facebook/Instagram), LinkedIn, and TikTok ads in realtime.
 
 **New to Plai?** Sign up for a [7-day free trial](https://whitelabel.plai.io) to get started.
 
